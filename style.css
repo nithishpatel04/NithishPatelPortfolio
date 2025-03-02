@@ -237,9 +237,15 @@ section {
 
 .ucf, .jntu {
     background: linear-gradient(to right, #00c853, #448aff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: border-box;  /* standard version */
+    -webkit-background-clip: border-box;  
+    -moz-background-clip: border-box; 
+
+    /* For text-specific background-clip */
+    -webkit-background-clip: text;  /* Apply only if text clipping is intended */
+    -webkit-text-fill-color: transparent;  /* For transparent text fill */
 }
+
 
 /* Paragraph Styling */
 p {
