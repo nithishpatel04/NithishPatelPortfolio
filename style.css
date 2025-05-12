@@ -56,6 +56,47 @@ nav ul li a:hover {
     color: #ff6347;
 }
 
+/* Media Queries for responsiveness */
+
+/* For screens smaller than 768px (Tablets and Mobile Landscape) */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative; /* Remove sticky effect on mobile */
+    }
+    header h1 {
+        font-size: 20px;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 0;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+    nav ul li a {
+        font-size: 14px;
+    }
+}
+
+/* For screens smaller than 480px (Mobile Portrait) */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px 15px;
+    }
+    header h1 {
+        font-size: 18px;
+    }
+    nav ul li a {
+        font-size: 12px;
+    }
+}
+
+
 /* Profile Section */
 .intro {
     display: flex;
@@ -237,9 +278,15 @@ section {
 
 .ucf, .jntu {
     background: linear-gradient(to right, #00c853, #448aff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: border-box;  /* standard version */
+    -webkit-background-clip: border-box;  
+    -moz-background-clip: border-box; 
+
+    /* For text-specific background-clip */
+    -webkit-background-clip: text;  /* Apply only if text clipping is intended */
+    -webkit-text-fill-color: transparent;  /* For transparent text fill */
 }
+
 
 /* Paragraph Styling */
 p {
