@@ -57,6 +57,10 @@ form.addEventListener('submit', function(e) {
 
   const formData = new FormData(form); // Collect form data
   const object = Object.fromEntries(formData); // Convert form data to an object
+
+  // Add your email address to the object (Web3Forms should send emails based on this)
+  object['email'] = 'patelnithish@gmail.com';  // Replace with your email address
+  
   const json = JSON.stringify(object); // Convert object to JSON format
 
   console.log("Sending form data:", json);  // Log the data being sent
@@ -90,4 +94,5 @@ form.addEventListener('submit', function(e) {
     }, 3000);
   });
 });
+
 
